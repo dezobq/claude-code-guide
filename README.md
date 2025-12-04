@@ -5,7 +5,7 @@
 > **Autor**: Andre Queiroz - DezoDev
 > **Contato**: contact@dezodev.com
 > **Versão**: 1.0.0
-> **Última atualização**: Dezembro 2024
+> **Última atualização**: Dezembro 2025
 
 ---
 
