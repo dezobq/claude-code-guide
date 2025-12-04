@@ -2,7 +2,8 @@
 
 > Um guia prático para configurar o Claude Code como um assistente de desenvolvimento profissional.
 >
-> **Autor**: DezoDev
+> **Autor**: Andre Queiroz - DezoDev
+> **Contato**: contact@dezodev.com
 > **Versão**: 1.0.0
 > **Última atualização**: Dezembro 2024
 
@@ -1591,5 +1592,6 @@ claude
 
 ---
 
-**Criado por DezoDev**
+**Criado por Andre Queiroz - DezoDev**
+**Contato**: contact@dezodev.com
 **Licença**: MIT
