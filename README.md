@@ -22,6 +22,7 @@
 9. [Orquestração Triple-Tool](#9-orquestração-triple-tool)
 10. [Boas Práticas](#10-boas-práticas)
 11. [Quick Start](#11-quick-start)
+12. [Descobrindo e Criando Novas Skills e Plugins](#12-descobrindo-e-criando-novas-skills-e-plugins)
 
 ---
 
@@ -1584,8 +1585,137 @@ claude
 
 ---
 
+## 12. Descobrindo e Criando Novas Skills e Plugins
+
+### 12.1 Pesquisa com Agentes Especializados
+
+Quando preciso de uma nova skill ou plugin, uso meus próprios agentes de pesquisa para buscar de fontes confiáveis as opções mais adequadas à tarefa em execução.
+
+**Workflow de descoberta:**
+
+```
+1. Identificar necessidade
+   → "Preciso de um plugin para X"
+
+2. Lançar agente de pesquisa
+   → best-practices-researcher
+   → framework-docs-researcher
+
+3. Pesquisar em fontes confiáveis
+   → claude-plugins.dev (catálogo de plugins)
+   → GitHub (repositórios oficiais)
+   → Documentação oficial
+
+4. Avaliar opções encontradas
+   → Compatibilidade com meu setup
+   → Qualidade e manutenção
+   → Casos de uso similares
+
+5. Instalar e testar
+   → /plugins install nome-plugin
+```
+
+### 12.2 Fonte Principal: Claude Plugins Directory
+
+O site **[claude-plugins.dev](https://claude-plugins.dev/)** é uma fonte frequente para descobrir novos plugins e skills. Ele oferece:
+
+- Catálogo organizado por categoria
+- Descrições e casos de uso
+- Links para repositórios
+- Avaliações da comunidade
+
+**Como usar:**
+
+```bash
+# 1. Pesquisar no site
+# Acesse https://claude-plugins.dev/
+# Filtre por categoria (frontend, backend, testing, etc)
+
+# 2. Identificar plugin/skill interessante
+# Verifique descrição e compatibilidade
+
+# 3. Instalar via Claude Code
+/plugins install nome-do-plugin
+```
+
+### 12.3 Adaptando Skills com Skill Writer
+
+Uso a skill `skill-writer` para adaptar skills existentes às minhas necessidades específicas. Isso permite personalizar:
+
+- Padrões de código preferidos
+- Quality gates específicos
+- Workflows customizados
+- Integrações com meu setup
+
+**Workflow de adaptação:**
+
+```
+1. Encontrar skill base
+   → Skill existente que atende parcialmente
+
+2. Invocar skill-writer
+   → "Use a skill skill-writer para criar uma versão customizada"
+
+3. Definir customizações
+   → Meus padrões de código
+   → Minhas ferramentas preferidas
+   → Meus quality gates
+
+4. Gerar nova skill
+   → Arquivo SKILL.md personalizado
+   → Salvar em ~/.claude/skills/ ou .claude/skills/
+
+5. Testar e iterar
+   → Usar em projeto real
+   → Refinar conforme necessário
+```
+
+**Exemplo de customização:**
+
+```markdown
+# Antes (skill genérica)
+## Testing
+- Write unit tests
+
+# Depois (skill customizada para meu setup)
+## Testing (DezoDev Standards)
+- TDD obrigatório (teste antes do código)
+- Vitest para unit tests
+- Playwright para E2E
+- axe-core para acessibilidade
+- Coverage mínimo: 90%
+```
+
+### 12.4 Ciclo Contínuo de Melhoria
+
+```mermaid
+graph LR
+    A[Identificar Gap] --> B[Pesquisar Soluções]
+    B --> C[Avaliar Opções]
+    C --> D{Existe?}
+    D -->|Sim| E[Instalar/Adaptar]
+    D -->|Não| F[Criar do Zero]
+    E --> G[Testar]
+    F --> G
+    G --> H[Documentar]
+    H --> I[Usar em Produção]
+    I --> A
+```
+
+**Fontes confiáveis para pesquisa:**
+
+| Fonte | Tipo | URL |
+|-------|------|-----|
+| Claude Plugins Directory | Catálogo | https://claude-plugins.dev/ |
+| GitHub Claude Code | Oficial | https://github.com/anthropics/claude-code |
+| MCP Servers | Oficial | https://github.com/modelcontextprotocol/servers |
+| Community Plugins | Comunidade | Vários repositórios |
+
+---
+
 ## Referências
 
+- [Claude Plugins Directory](https://claude-plugins.dev/) - Catálogo de plugins e skills
 - [Documentação Oficial Claude Code](https://docs.anthropic.com/claude-code)
 - [Model Context Protocol](https://modelcontextprotocol.io/)
 - [Anthropic API](https://docs.anthropic.com/api)
